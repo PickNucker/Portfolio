@@ -1,10 +1,17 @@
+"use client"
 import Image from 'next/image';
 import NetflixCloneApp from './netflixClone/netflixCloneApp';
 import { Button } from './material-tailwind';
+import { Sidebar } from '@/components/sidebar';
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <>
+<div className='absolute ml-5 mt-5'>
+
+  <Sidebar/>
+</div>
+    <div className="relative container mx-auto">
       <div className=" bg-blue-gray-700 flex gap-4 justify-center">
         <div className="">
           <span className="">
@@ -22,5 +29,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -5,9 +5,29 @@ import {
   Input,
   Checkbox,
   Button,
-  Typography
+  Typography,
 } from '../../material-tailwind';
 import { TermsOfService } from './TermsOfService';
+import { IconButton } from "@material-tailwind/react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+import { useSession, signIn, signOut } from "next-auth/react"
+
+library.add(fab)
+
+const signInWithProviders = (provider: string) => {
+  if(provider === "google"){
+    signIn("google")
+  }
+
+  if(provider === "github"){
+    signIn("github")
+
+  }
+}
 
 export function SignUp() {
   const [renderLogin, setRenderLogin] = useState('login');
@@ -135,6 +155,15 @@ export function SignUp() {
             {renderLogin === 'login' ? 'SignIn' : 'SignUp'}
           </a>
         </Typography>
+        {renderLogin === "login" && 
+        (<div className="flex gap-4 justify-center mt-5">
+          <IconButton className="rounded bg-[#ea4335] hover:shadow-[#ea4335]/20 focus:shadow-[#ea4335]/20 active:shadow-[#ea4335]/10" onClick={() => signInWithProviders("google")}>
+              <FontAwesomeIcon icon={['fab', 'google']}/>
+          </IconButton>
+          <IconButton className="rounded bg-[#333333] hover:shadow-[#333333]/20 focus:shadow-[#333333]/20 active:shadow-[#333333]/10" onClick={() => signInWithProviders("github")}>
+            <FontAwesomeIcon icon={['fab', 'github']}/>
+          </IconButton>
+        </div>)}
       </form>
     </Card>
   );

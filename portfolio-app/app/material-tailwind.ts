@@ -10,7 +10,18 @@ import {
     Dialog,
     DialogHeader,
     DialogBody,
-    DialogFooter
+    DialogFooter,
+    IconButton,
+    List,
+    ListItem,
+    ListItemPrefix,
+    ListItemSuffix,
+    Chip,
+    Accordion,
+    AccordionHeader,
+    AccordionBody,
+    Alert,
+    Drawer,
  } from "@material-tailwind/react";
  
 export { 
@@ -23,4 +34,15 @@ export {
     Dialog,
     DialogHeader,
     DialogBody,
-    DialogFooter };
+    DialogFooter,
+    IconButton,
+    List,
+    ListItem,
+    ListItemPrefix,
+    ListItemSuffix,
+    Chip,
+    Accordion,
+    AccordionHeader,
+    AccordionBody,
+    Alert,
+    Drawer };
