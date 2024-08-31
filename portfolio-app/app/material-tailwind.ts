@@ -23,7 +23,14 @@ import {
     Alert,
     Drawer,
     Navbar,
-    MobileNav
+    MobileNav,
+    Tabs,
+    TabsHeader,
+    TabsBody,
+    Tab,
+    TabPanel,
+    Carousel,
+    Avatar,
  } from "@material-tailwind/react";
  
 export { 
@@ -49,4 +56,11 @@ export {
     Alert,
     Drawer,
     Navbar,
-    MobileNav };
+    MobileNav,
+    Tabs,
+    TabsHeader,
+    TabsBody,
+    Tab,
+    TabPanel,
+    Carousel,
+    Avatar };

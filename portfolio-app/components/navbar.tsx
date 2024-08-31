@@ -1,24 +1,24 @@
-"use client"
+'use client';
 
-import React from "react";
+import React from 'react';
 import {
   Navbar,
   MobileNav,
   Typography,
   Button,
-  IconButton,
-} from "../app/material-tailwind";
- 
+  IconButton
+} from '../app/material-tailwind';
+
 export function NavbarProfile() {
   const [openNav, setOpenNav] = React.useState(false);
- 
+
   React.useEffect(() => {
     window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false),
+      'resize',
+      () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
- 
+
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
@@ -39,7 +39,7 @@ export function NavbarProfile() {
             fill="#90A4AE"
           />
         </svg>
- 
+
         <a href="#" className="flex items-center">
           Pages
         </a>
@@ -116,7 +116,7 @@ export function NavbarProfile() {
       </Typography>
     </ul>
   );
- 
+
   return (
     <Navbar className="max-w-screen bg-black sticky ">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
