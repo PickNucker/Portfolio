@@ -157,8 +157,8 @@ export function SignUp() {
         </Typography>
         {renderLogin === "login" && 
         (<div className="flex gap-4 justify-center mt-5">
-          <IconButton className="rounded bg-[#ea4335] hover:shadow-[#ea4335]/20 focus:shadow-[#ea4335]/20 active:shadow-[#ea4335]/10" onClick={() => signInWithProviders("google")}>
-              <FontAwesomeIcon icon={['fab', 'google']}/>
+          <IconButton className="rounded bg-gray-200 hover:shadow-[#ea4335]/20 focus:shadow-[#ea4335]/20 active:shadow-[#ea4335]/10" onClick={() => signInWithProviders("google")}>
+          <img src="https://docs.material-tailwind.com/icons/google.svg" alt="metamask" className="h-6 w-6" />
           </IconButton>
           <IconButton className="rounded bg-[#333333] hover:shadow-[#333333]/20 focus:shadow-[#333333]/20 active:shadow-[#333333]/10" onClick={() => signInWithProviders("github")}>
             <FontAwesomeIcon icon={['fab', 'github']}/>

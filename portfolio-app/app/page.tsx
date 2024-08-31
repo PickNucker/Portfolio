@@ -1,34 +1,52 @@
-"use client"
-import Image from 'next/image';
-import NetflixCloneApp from './netflixClone/netflixCloneApp';
-import { Button } from './material-tailwind';
-import { Sidebar } from '@/components/sidebar';
+import { NavbarProfile } from '@/components/navbar'
+import React from 'react'
+import { Button } from './material-tailwind'
 
-export default function Home() {
+const Home = () => {
   return (
-    <>
-<div className='absolute ml-5 mt-5'>
-
-  <Sidebar/>
-</div>
-    <div className="relative container mx-auto">
-      <div className=" bg-blue-gray-700 flex gap-4 justify-center">
-        <div className="">
-          <span className="">
-            <h1 className="text-3xl text-deep-orange-200">
-              <strong>Portfolio</strong>
-            </h1>
-          </span>
-        </div>
-        <div>
-          <Button size="lg" className="mt-1 mb-5">
-            <a className="border-none" href="./netflixClone">
-              Netflix Clone
-            </a>
-          </Button>
-        </div>
+    <div>
+      <div className=''>
+        <NavbarProfile/>
       </div>
+      <section className="flex items-center justify-center h-screen bg-[#221e29] text-white">
+        <div className="flex text-center items-center justify-center gap-10">
+          <div className='flex-col'>
+            <h1 className='text-6xl'>Hi, I'M MUHAMMED</h1>
+            <p className='mt-10 mb-10'>I'm a junior <span className='text-red-400'>fullstack developer</span></p>
+            <div className='flex items-center justify-center mx-auto'>
+
+            <Button>About me</Button>
+            </div>
+          </div>
+          <img src='backgroundPic.webp' className='size-6/12 bg-opacity-50'></img>
+        </div>
+    </section>
+
+    <section className="h-screen py-20 px-6 bg-gradient-radial text-gray-900">
+        <div className="container mx-auto">
+            <h2 className="text-3xl font-semibold mb-6">About me</h2>
+            <p className="text-lg">Hier kannst du etwas über dein Unternehmen oder deine Webseite erzählen.</p>
+        </div>
+        <div className='flex'>
+
+        </div>
+    </section>
+
+    <section className="py-20 px-6 bg-gray-200">
+        <div className="container mx-auto">
+            <h2 className="text-3xl font-semibold mb-6">Unsere Dienstleistungen</h2>
+            <p className="text-lg">Hier kannst du deine Dienstleistungen oder Angebote beschreiben.</p>
+        </div>
+    </section>
+
+    <section className="py-20 px-6 bg-white">
+        <div className="container mx-auto">
+            <h2 className="text-3xl font-semibold mb-6">Kontakt</h2>
+            <p className="text-lg">Hier kannst du Kontaktinformationen oder ein Kontaktformular bereitstellen.</p>
+        </div>
+    </section>
     </div>
-    </>
-  );
+  )
 }
+
+export default Home

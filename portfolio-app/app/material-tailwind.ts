@@ -22,6 +22,8 @@ import {
     AccordionBody,
     Alert,
     Drawer,
+    Navbar,
+    MobileNav
  } from "@material-tailwind/react";
  
 export { 
@@ -45,4 +47,6 @@ export {
     AccordionHeader,
     AccordionBody,
     Alert,
-    Drawer };
+    Drawer,
+    Navbar,
+    MobileNav };
