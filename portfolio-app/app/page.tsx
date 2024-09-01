@@ -5,15 +5,19 @@ import React, { useRef } from 'react';
 import { Button } from './material-tailwind';
 import { FooterStani } from '@/components/footer';
 import { PreviousWork } from '@/components/previousWork';
+import Link from 'next/link';
 
 const Home = () => {
   return (
     <div>
-      <div className="">
+      <div className="z-50">
         <NavbarProfile />
       </div>
 
-      <section className="flex items-center justify-center h-screen bg-[#221e29] text-white">
+      <section
+        id="home"
+        className="flex items-center justify-center h-screen bg-[#221e29] text-white"
+      >
         <div className="flex text-center items-center justify-center gap-10">
           <div className="flex-col">
             <h1 className="text-6xl">Hi, I'M MUHAMMED</h1>
@@ -45,22 +49,39 @@ const Home = () => {
       {/* About Me */}
       <section
         id="aboutMe"
-        className="flex h-screen py-20 px-6 bg-gradient-radial bg-gray-400 items-center justify-center"
+        className="flex h-screen py-20 px-6 bg-gradient-radial bg-white items-center justify-center"
       >
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-semibold mb-6">About me</h2>
-          <p className="text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-            ipsa nobis eius dolores, rerum, nesciunt error totam enim alias quam
-            pariatur nam, culpa delectus facilis reprehenderit facere et ullam
-            ducimus..
+        <div className="container mx-auto flex">
+          <img src="aboutMe.jpg " className="size-4/12"></img>
+          <p className="text-lg mt-20 leading-10 whitespace-pre-line">
+            Hallo! Ich bin Muhammed, Student der Angewandten Informatik an der
+            Ruhr-Universität Bochum. Ich interessiere mich besonders für die
+            Spieleentwicklung mit Unity und habe bereits einige kleinere Spiele
+            entwickelt. Derzeit arbeite ich als Werkstudent bei PSI Software EE
+            und sammle wertvolle Erfahrungen in der Softwareentwicklung. Ich bin
+            offen für neue Herausforderungen und freue mich auf spannende
+            Projekte und interessante Kooperationen. Lass uns gerne in{' '}
+            <span className="no-underline hover:underline">
+              <a href="#contact" className="">
+                Kontakt{' '}
+              </a>
+            </span>
+            treten, wenn du mehr erfahren möchtest!
+            <br />
+            <br />
+            <Button color="red" className="h-12 w-50">
+              <Link href={'/lebenslauf'}>Lebenslauf</Link>
+            </Button>
           </p>
         </div>
         <div className="flex"></div>
       </section>
 
       {/* Previous Work */}
-      <section className="flex bg-profileBackground text-white h-screen py-20 px-6 bg-gradient-radial text-gray-900 items-center justify-center mb-20">
+      <section
+        id="work"
+        className="flex bg-profileBackground  h-screen py-20 px-6 bg-gradient-radial text-gray-900 items-center justify-center mb-20 -z-10"
+      >
         <div className="container mx-auto">
           <h2 className="flex text-3xl font-semibold mb-20 items-center justify-center">
             Portfolio
@@ -71,7 +92,7 @@ const Home = () => {
       </section>
 
       {/* Gettin in Contact with me */}
-      <section className="bg-white dark:bg-gray-900 mb-40">
+      <section id="contact" className="bg-white dark:bg-gray-900 mb-40">
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
             Contact me
@@ -132,7 +153,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Gettin in Contact with me */}
+      {/* Footer */}
       <section className="flex justify-center">
         <FooterStani />
       </section>

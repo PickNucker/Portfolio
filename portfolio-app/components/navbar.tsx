@@ -8,6 +8,7 @@ import {
   Button,
   IconButton
 } from '../app/material-tailwind';
+import Link from 'next/link';
 
 export function NavbarProfile() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -20,12 +21,12 @@ export function NavbarProfile() {
   }, []);
 
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="flex items-center gap-x-2 p-1 font-medium"
+        className="flex items-center gap-x-2 p-1 font-medium text-white"
       >
         <svg
           width="16"
@@ -40,15 +41,15 @@ export function NavbarProfile() {
           />
         </svg>
 
-        <a href="#" className="flex items-center">
-          Pages
+        <a href="#work" className="flex items-center">
+          Portfolio
         </a>
       </Typography>
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="flex items-center gap-x-2 p-1 font-medium"
+        className="flex items-center gap-x-2 p-1 font-medium text-white"
       >
         <svg
           width="16"
@@ -64,15 +65,15 @@ export function NavbarProfile() {
             fill="#90A4AE"
           />
         </svg>
-        <a href="#" className="flex items-center">
-          Account
+        <a href="#aboutMe" className="flex items-center">
+          About me
         </a>
       </Typography>
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="flex items-center gap-x-2 p-1 font-medium"
+        className="flex items-center gap-x-2 p-1 font-medium text-white"
       >
         <svg
           width="14"
@@ -86,15 +87,15 @@ export function NavbarProfile() {
             fill="#90A4AE"
           />
         </svg>
-        <a href="#" className="flex items-center">
-          Blocks
+        <a href="#contact" className="flex items-center">
+          Contact me
         </a>
       </Typography>
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="flex items-center gap-x-2 p-1 font-medium"
+        className="flex items-center gap-x-2 p-1 font-medium text-white"
       >
         <svg
           width="16"
@@ -110,39 +111,38 @@ export function NavbarProfile() {
             fill="#90A4AE"
           />
         </svg>
-        <a href="#" className="flex items-center">
-          Docs
-        </a>
+        <a href={'/lebenslauf'}>CV</a>
       </Typography>
     </ul>
   );
 
   return (
-    <Navbar className="max-w-screen bg-black sticky ">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+    <Navbar className="max-w-full bg-gray-900 rounded-none border-gray-900 fixed z-50">
+      <div className="flex items-center justify-between">
         <Typography
           as="a"
-          href="#"
+          href="#home"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
-          Material Tailwind
+          Muhammed Aydogdu
         </Typography>
         <div className="hidden lg:block">{navList}</div>
-        <div className="flex items-center gap-x-1">
+        <div className="flex items-center gap-x-1 ">
           <Button variant="text" size="sm" className="hidden lg:inline-block">
-            <span>Log In</span>
+            <span className="text-white">Log In</span>
           </Button>
           <Button
             variant="gradient"
             size="sm"
-            className="hidden lg:inline-block"
+            color="red"
+            className="hidden lg:inline-block text-white"
           >
             <span>Sign in</span>
           </Button>
         </div>
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          className="ml-auto h-6 w-6 text-inherit  hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >
@@ -183,10 +183,16 @@ export function NavbarProfile() {
           {navList}
           <div className="flex items-center gap-x-1">
             <Button fullWidth variant="text" size="sm" className="">
-              <span>Log In</span>
+              <span className="text-white">Log In</span>
             </Button>
-            <Button fullWidth variant="gradient" size="sm" className="">
-              <span>Sign in</span>
+            <Button
+              fullWidth
+              color="red"
+              variant="gradient"
+              size="sm"
+              className=""
+            >
+              <span className="text-white">Sign in</span>
             </Button>
           </div>
         </div>
