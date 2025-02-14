@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../material-tailwind';
+import { Button } from '../../material-tailwind';
 import { SignUp } from './SignIn-up/SignUp';
 
 const NetflixCloneApp = () => {

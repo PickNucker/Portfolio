@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Button } from '../material-tailwind';
+import { Button } from '../../material-tailwind';
 
 const profilePage = () => {
   return (

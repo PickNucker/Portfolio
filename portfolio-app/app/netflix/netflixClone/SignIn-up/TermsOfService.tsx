@@ -5,7 +5,7 @@ import {
   DialogHeader,
   DialogBody,
   DialogFooter
-} from '../../material-tailwind';
+} from '../../../material-tailwind';
 
 export function TermsOfService() {
   const [open, setOpen] = React.useState(false);
