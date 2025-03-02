@@ -6,7 +6,7 @@ import {
   Checkbox,
   Button,
   Typography
-} from '../../material-tailwind';
+} from '../../../material-tailwind';
 import { TermsOfService } from './TermsOfService';
 import { IconButton } from '@material-tailwind/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
