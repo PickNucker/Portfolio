@@ -15,6 +15,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import { useSession, signIn, signOut } from 'next-auth/react';
+import axios from 'axios';
 
 library.add(fab);
 
@@ -30,12 +31,29 @@ const signInWithProviders = (provider: string) => {
 
 export function SignUp() {
   const [renderLogin, setRenderLogin] = useState('login');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const toggleRender = useCallback(() => {
     setRenderLogin((currentRender) =>
       currentRender === 'login' ? 'register' : 'login'
     );
   }, []);
+
+  const register = useCallback(async () => {
+    try{
+      await axios.post('../api/auth/register', {
+        firstName,
+        lastName,
+        email,
+        password
+      });
+    }catch(error){
+      console.log(`Ein Fehler ist aufgetreten => ${error}`);
+    }
+  }, [email, firstName, lastName, password])
 
   return (
     <Card color="transparent" shadow={false}>
@@ -65,6 +83,7 @@ export function SignUp() {
                 size="lg"
                 placeholder="John"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900 text-gray-300"
+                onChange={(e) => setFirstName(e.target.value)}
                 labelProps={{
                   className: 'before:content-none after:content-none'
                 }}
@@ -84,6 +103,7 @@ export function SignUp() {
                 labelProps={{
                   className: 'before:content-none after:content-none'
                 }}
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
           )}
@@ -101,6 +121,7 @@ export function SignUp() {
             labelProps={{
               className: 'before:content-none after:content-none'
             }}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <Typography
             variant="h6"
@@ -117,6 +138,7 @@ export function SignUp() {
             labelProps={{
               className: 'before:content-none after:content-none'
             }}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         {renderLogin === 'register' && (
@@ -136,7 +158,7 @@ export function SignUp() {
             containerProps={{ className: '-ml-2.5' }}
           />
         )}
-        <Button className="mt-6 shadow-none" fullWidth color="red">
+        <Button onClick={renderLogin === "register" ? register : undefined} className="mt-6 shadow-none" fullWidth color="red">
           {renderLogin === 'login' ? 'Login' : 'Register'}
         </Button>
         <Typography
