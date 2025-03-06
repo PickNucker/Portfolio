@@ -1,9 +1,19 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import React from 'react';
 import { Typography, Input, IconButton } from '../material-tailwind';
 
 export const Signin = () => {
+  const [userName, setUserMail] = useState('');
+  const [password, setPassword] = useState('');
+
+  useEffect(() => {}, [userName, password]);
+
+  const handleSingIn = () => {
+    console.log(`name: ${userName} und das password: ${password}`);
+  };
+
   return (
     <div className="h-screen bg-[#221e29] flex flex-col justify-center items-center gap-5">
       <div className="bg-[#1f2937] rounded-lg w-[70%] h-[60%] flex overflow-hidden">
@@ -24,10 +34,20 @@ export const Signin = () => {
               className="w-full px-4 py-2 bg-[#1E293B] rounded-md text-white border border-gray-600 focus:outline-none focus:border-blue-500"
               placeholder="name@company.com"
             /> */}
-            <Input size="md" label="Email" color="white" />
+            <Input
+              size="md"
+              label="Email"
+              color="white"
+              onChange={(e: any) => setUserMail(e.target.value)}
+            />
           </div>
 
-          <Input size="md" label="Password" color="white" />
+          <Input
+            size="md"
+            label="Password"
+            color="white"
+            onChange={(e: any) => setPassword(e.target.value)}
+          />
 
           <div className="mb-4"></div>
 
@@ -43,7 +63,10 @@ export const Signin = () => {
             </a>
           </div>
 
-          <button className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 rounded-lg mb-4">
+          <button
+            className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 rounded-lg mb-4"
+            onSubmit={handleSingIn}
+          >
             Sign in to your account
           </button>
 

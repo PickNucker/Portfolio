@@ -5,7 +5,6 @@ import React, { useRef } from 'react';
 import { Button } from './material-tailwind';
 import { FooterStani } from '@/components/footer';
 import { PreviousWork } from '@/components/previousWork';
-import Link from 'next/link';
 import { SessionProvider } from 'next-auth/react';
 
 export const Homepage = () => {
