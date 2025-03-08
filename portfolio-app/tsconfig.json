@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/netflixClone/SignUp.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/netflixClone/SignUp.jsx", "app/MovieSearcher/Home/Home.tsx"],
   "exclude": ["node_modules"]
 }
