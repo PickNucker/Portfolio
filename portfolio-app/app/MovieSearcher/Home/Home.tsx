@@ -8,7 +8,7 @@ import { getPopularMovies, searchMovies } from "../../../services/api";
 
 const Home = () => {
     const [searchQuery, setSearchQuery] = useState("");
-    const [movies, setMovies] = useState<{id:number}[]>([]); // Sicherstellen, dass 'movies' als leeres Array initialisiert wird
+    const [movies, setMovies] = useState<{id:number}[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 

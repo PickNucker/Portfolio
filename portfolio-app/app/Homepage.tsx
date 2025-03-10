@@ -1,13 +1,29 @@
 'use client';
 
 import { NavbarProfile } from '@/components/navbar';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from './material-tailwind';
 import { FooterStani } from '@/components/footer';
 import { PreviousWork } from '@/components/previousWork';
 import { SessionProvider } from 'next-auth/react';
+import { readFile } from '@/services/api'
 
 export const Homepage = () => {
+
+  let gamecollection: object[] = []
+
+  useEffect(() => {
+    fetch("/gamecollection.json")
+        .then((res) => res.json())
+        .then((data: object[]) => {
+          gamecollection = data
+          console.log("Gamecollection: ",gamecollection)
+        })
+        .catch((error) => console.error("Fehler beim Laden:", error));
+}, []);
+
+console.log(gamecollection)
+
   return (
     <div>
       <div className="z-50">
@@ -55,7 +71,7 @@ export const Homepage = () => {
       >
         <div className="container mx-auto flex">
           <img src="aboutMe.jpg " className="size-4/12"></img>
-          <p className="text-lg mt-20 leading-10 whitespace-pre-line">
+          <p className="text-lg mt-20 leading-10 whitespace-pre-line text-black">
             Hallo! Ich bin Muhammed, Student der Angewandten Informatik an der
             Ruhr-Universität Bochum. Ich interessiere mich besonders für die
             Spieleentwicklung mit Unity und habe bereits einige kleinere Spiele
@@ -64,7 +80,12 @@ export const Homepage = () => {
             offen für neue Herausforderungen und freue mich auf spannende
             Projekte und interessante Kooperationen. Lass uns gerne in{' '}
             <span className="no-underline hover:underline">
-              <a href="#contact" className="">
+              <a className="" onClick={() => {
+                const contactMe = document.getElementById("contact");
+                contactMe?.scrollIntoView({
+                  behavior : 'smooth'
+                });
+              }}>
                 Kontakt{' '}
               </a>
             </span>

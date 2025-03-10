@@ -12,3 +12,13 @@ export const searchMovies = async (query) => {
     const data = await response.json();
     return data.results;
 }
+
+export const readFile = async (filePath, callback) => {
+    const response = await fetch(filePath);
+
+    if(!response.ok) throw  new Error("Datei konnte nicht eingelesen werden");
+
+    const data = await response.json();
+    callback(data);
+}
+
