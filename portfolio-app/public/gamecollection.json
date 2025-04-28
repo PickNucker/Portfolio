@@ -1,20 +1,51 @@
 [
     {
+        "id": 1,
         "game_title": "Shuriken",
         "description" : "A game made within roughly 5 days for a university project.",
         "image": "https://img.itch.zone/aW1hZ2UvMjAzNDQ3OS8xMTk2NTc3OC5wbmc=/original/XIeqa7.png",
         "download_link": "https://picknucker.itch.io/shuriken"
     },
     {
-        "game_title": "Shuriken2",
-        "description" : "A game made within roughly 5 days for a university project.",
-        "image": "https://img.itch.zone/aW1hZ2UvMjAzNDQ3OS8xMTk2NTc3OC5wbmc=/original/XIeqa7.png",
+        "id": 2,
+        "game_title": "Keep the tower alive",
+        "description" : "The game is based on waves spawning every 14 seconds that contain more and more enemies. The tower loses durability every second. Your goal is to keep the opponents away from the tower and keep the tower up for as long as possible. Game-Jam Theme: Delay the inevitable",
+        "image": "https://img.itch.zone/aW1nLzg1ODU0OTIucG5n/original/Y1KCPK.png",
         "download_link": "https://picknucker.itch.io/shuriken"
     },
     {
-        "game_title": "Shuriken3",
-        "description" : "A game made within roughly 5 days for a university project.",
-        "image": "https://img.itch.zone/aW1hZ2UvMjAzNDQ3OS8xMTk2NTc3OC5wbmc=/original/XIeqa7.png",
-        "download_link": "https://picknucker.itch.io/shuriken"
+        "id": 3,
+        "game_title": "Rock n' Roll",
+        "description" : "A multiplayer shooter where you can play against your friends",
+        "image": "https://img.itch.zone/aW1nLzExOTE4MDg1LmpwZw==/original/0BNjTd.jpg",
+        "download_link": "https://picknucker.itch.io/dsa"
+    },
+    {
+        "id": 4,
+        "game_title": "Straight Through the Instability",
+        "description" : "A theme based game based on the Ludum Dare game jam. It's a game where you have to drop stages step for step to reach finally the end boss.",
+        "image": "https://img.itch.zone/aW1hZ2UvMTIyMzQ2OS83MTM1NDI2LnBuZw==/original/Z75ACk.png",
+        "download_link": "https://picknucker.itch.io/keep-the-tower-alive"
+    },
+    {
+        "id": 5,
+        "game_title": "Stuck in Time",
+        "description" : "",
+        "image": "https://img.itch.zone/aW1nLzExOTE4MDgwLmpwZw==/original/u8%2FkZM.jpg",
+        "download_link": "https://picknucker.itch.io/stuck-in-time"
+    },
+    {
+        "id": 6,
+        "game_title": "Me vs You",
+        "description" : "A young boy witnessed how a dragon slayed is whole family.Many years have passed and the now grown kid decided to take revange for his family.",
+        "image": "https://img.itch.zone/aW1nLzExOTE4MDg2LmpwZw==/original/mKNY2x.jpg",
+        "download_link": "https://picknucker.itch.io/me-vs-you"
+    },
+    {
+        "id": 7,
+        "game_title": "Enemies As Weapons",
+        "description" : "A gamejam themed game. The theme was: enemies as weapons",
+        "image": "https://img.itch.zone/aW1hZ2UvMTAyOTk0OC81ODc1ODcwLnBuZw==/original/3rA9gM.png",
+        "download_link": "https://picknucker.itch.io/enemies-as-weapons"
     }
 ]

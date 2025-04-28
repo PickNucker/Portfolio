@@ -1,7 +1,7 @@
 'use client';
 
 import { NavbarProfile } from '@/components/navbar';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from './material-tailwind';
 import { FooterStani } from '@/components/footer';
 import { PreviousWork } from '@/components/previousWork';
@@ -10,22 +10,8 @@ import { readFile } from '@/services/api'
 
 export const Homepage = () => {
 
-  let gamecollection: object[] = []
-
-  useEffect(() => {
-    fetch("/gamecollection.json")
-        .then((res) => res.json())
-        .then((data: object[]) => {
-          gamecollection = data
-          console.log("Gamecollection: ",gamecollection)
-        })
-        .catch((error) => console.error("Fehler beim Laden:", error));
-}, []);
-
-console.log(gamecollection)
-
   return (
-    <div>
+    <div className='bg-[#221e29]'>
       <div className="z-50">
         <SessionProvider>
           <NavbarProfile />
@@ -72,13 +58,12 @@ console.log(gamecollection)
         <div className="container mx-auto flex">
           <img src="aboutMe.jpg " className="size-4/12"></img>
           <p className="text-lg mt-20 leading-10 whitespace-pre-line text-black">
-            Hallo! Ich bin Muhammed, Student der Angewandten Informatik an der
-            Ruhr-Universität Bochum. Ich interessiere mich besonders für die
-            Spieleentwicklung mit Unity und habe bereits einige kleinere Spiele
-            entwickelt. Derzeit arbeite ich als Werkstudent bei PSI Software EE
-            und sammle wertvolle Erfahrungen in der Softwareentwicklung. Ich bin
-            offen für neue Herausforderungen und freue mich auf spannende
-            Projekte und interessante Kooperationen. Lass uns gerne in{' '}
+          Hallo! Ich bin Muhammed, Bachelor-Absolvent der Angewandten Informatik an der Ruhr-Universität Bochum. 
+          Besonders interessiere ich mich für die Spieleentwicklung mit Unity und habe bereits einige 
+          kleinere Spiele realisiert. Während meines Studiums habe ich als Werkstudent bei PSI Software EE 
+          gearbeitet und dabei wertvolle Erfahrungen in der Softwareentwicklung gesammelt. Ich bin offen für 
+          neue Herausforderungen und freue mich auf spannende Projekte sowie interessante Kooperationen.
+          Lass uns gerne in{' '}
             <span className="no-underline hover:underline">
               <a className="" onClick={() => {
                 const contactMe = document.getElementById("contact");
@@ -106,20 +91,20 @@ console.log(gamecollection)
       {/* Previous Work */}
       <section
         id="work"
-        className="flex bg-profileBackground  h-screen py-20 px-6 bg-gradient-radial text-gray-900 items-center justify-center mb-20 -z-10"
+        className="flex bg-profileBackground  h-screen px-6 bg-gradient-radial text-gray-900 items-center justify-center mb-20 -z-10"
       >
-        <div className="container mx-auto ">
+        <div className="container mx-auto my-auto py-8 py-8 lg:py-16 px-4 h-screen">
           <h2 className="flex text-3xl font-semibold mb-20 items-center justify-center text-white">
             Portfolio
           </h2>
-          <PreviousWork />
+          <PreviousWork/>
         </div>
         <div className="flex"></div>
       </section>
 
       {/* Gettin in Contact with me */}
       <section id="contact" className="bg-white dark:bg-gray-900 mb-40">
-        <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+        <div className="py-1 lg:py-8 px-4 mx-auto max-w-screen-md h-screen">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
             Contact me
           </h2>
@@ -180,7 +165,7 @@ console.log(gamecollection)
       </section>
 
       {/* Footer */}
-      <section className="flex justify-center">
+      <section className="flex justify-center pt-0">
         <FooterStani />
       </section>
     </div>
